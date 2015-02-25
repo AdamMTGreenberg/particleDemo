@@ -8,6 +8,10 @@
 # IDE Files
 .idea/
 *.iml
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
 
 # Java class files
 *.class
