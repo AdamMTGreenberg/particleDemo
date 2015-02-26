@@ -5,22 +5,26 @@ android {
     buildToolsVersion "21.1.2"
 
     defaultConfig {
-        applicationId "com.particledemo.test.particledemo"
         minSdkVersion 18
         targetSdkVersion 21
-        versionCode 1
-        versionName "1.0"
     }
+
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
 }
 
 dependencies {
+    // Default package imports
     compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Support package
+    compile 'com.android.support:support-v4:21.0.3'
     compile 'com.android.support:appcompat-v7:21.0.3'
-    compile 'com.jakewharton:butterknife:6.1.0'
+
+    // Butterknife
+    compile 'com.jakewharton:butterknife:6.0.0'
 }
