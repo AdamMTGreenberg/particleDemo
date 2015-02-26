@@ -37,5 +37,8 @@ public class AlphaInitializer implements ParticleInitializer {
         // Randomize for the range
         final int range = (mMaxAlpha - mMinAplha);
         final int alpha = random.nextInt(range) + mMinAplha;
+
+        // Set the alpha value
+        particle.mAlpha = alpha;
     }
 }

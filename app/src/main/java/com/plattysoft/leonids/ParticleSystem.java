@@ -6,6 +6,7 @@ import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import com.particledemo.test.particledemo.AlphaInitializer;
 import com.plattysoft.leonids.initializers.AccelerationInitializer;
 import com.plattysoft.leonids.initializers.ParticleInitializer;
 import com.plattysoft.leonids.initializers.RotationInitiazer;
@@ -35,33 +36,33 @@ import android.view.animation.LinearInterpolator;
 public class ParticleSystem {
 
 	private static final long TIMMERTASK_INTERVAL = 50;
-	private ViewGroup mParentView;
-	private int mMaxParticles;
-	private Random mRandom;
+    protected ViewGroup mParentView;
+    protected int mMaxParticles;
+    protected Random mRandom;
 
-	private ParticleField mDrawingView;
+	protected ParticleField mDrawingView;
 
-	private ArrayList<Particle> mParticles;
-	private ArrayList<Particle> mActiveParticles;
-	private long mTimeToLive;
-	private long mCurrentTime = 0;
+    protected ArrayList<Particle> mParticles;
+    protected ArrayList<Particle> mActiveParticles;
+    protected long mTimeToLive;
+    protected long mCurrentTime = 0;
 
-	private float mParticlesPerMilisecond;
-	private int mActivatedParticles;
-	private long mEmitingTime;
+    protected float mParticlesPerMilisecond;
+    protected int mActivatedParticles;
+    protected long mEmitingTime;
 
-	private List<ParticleModifier> mModifiers;
-	private List<ParticleInitializer> mInitializers;
-	private ValueAnimator mAnimator;
-	private Timer mTimer;
+    protected List<ParticleModifier> mModifiers;
+    protected List<ParticleInitializer> mInitializers;
+    protected ValueAnimator mAnimator;
+    protected Timer mTimer;
 
-	private float mDpToPxScale;
-	private int[] mParentLocation;
-	
-	private int mEmiterXMin;
-	private int mEmiterXMax;
-	private int mEmiterYMin;
-	private int mEmiterYMax;
+    protected float mDpToPxScale;
+    protected int[] mParentLocation;
+
+    protected int mEmiterXMin;
+    protected int mEmiterXMax;
+    protected int mEmiterYMin;
+    protected int mEmiterYMax;
 
 	private ParticleSystem(Activity a, int maxParticles, long timeToLive) {
 		mRandom = new Random();
@@ -466,7 +467,7 @@ public class ParticleSystem {
 		return (gravity & gravityToCheck) == gravityToCheck;
 	}
 
-	private void activateParticle(long delay) {
+	protected void activateParticle(long delay) {
 		Particle p = mParticles.remove(0);	
 		p.init();
 		// Initialization goes before configuration, scale is required before can be configured properly
@@ -481,7 +482,7 @@ public class ParticleSystem {
 		mActivatedParticles++;
 	}
 
-	private int getFromRange(int minValue, int maxValue) {
+	protected int getFromRange(int minValue, int maxValue) {
 		if (minValue == maxValue) {
 			return minValue;
 		}
@@ -551,4 +552,6 @@ public class ParticleSystem {
 			onUpdate(frameTimeInMs * i + 1);
 		}
 	}
+
+
 }

@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:background="#000000">
+<FrameLayout
+    android:id="@+id/background"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#001833">
 
     <View
         android:id="@+id/emiter_top_left"
         android:layout_width="1dp"
         android:layout_height="1dp"
-        android:layout_gravity="top|left"
+        android:layout_gravity="top|start"
         android:layout_marginTop="-20dp"/>
 
     <View
         android:id="@+id/emiter_top_right"
         android:layout_width="1dp"
         android:layout_height="1dp"
-        android:layout_gravity="top|right"
+        android:layout_gravity="top|end"
         android:layout_marginTop="-20dp"/>
 
     <Button
@@ -23,6 +25,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:text="Start"/>
+        android:text="@string/start"/>
 
 </FrameLayout>
